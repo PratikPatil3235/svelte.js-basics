@@ -2,6 +2,19 @@
   let firstName = "Bruce";
   let lastName = "Wane";
   $: fullName = `${firstName} ${lastName}`;
+  $: {
+    const greet = `Full name is: ${firstName} ${lastName}`;
+    console.log(greet);
+  }
+
+  let volume = 0;
+  $: if (volume < 0) {
+    alert(`can't go below`);
+    volume = 0;
+  } else if (volume > 20) {
+    alert(`can't go above 20`);
+    volume = 20;
+  }
 
   let items = [
     { id: 1, title: "TV", price: 100 },
@@ -23,6 +36,10 @@
 </script>
 
 <main>
+  <h2>Current volume {volume}</h2>
+  <button on:click={() => (volume += 2)}>Increse volume</button>
+  <button on:click={() => (volume -= 2)}>Decerese volume</button>
+
   <h1>{fullName}</h1>
   <h2>{firstName} {lastName}</h2>
 
