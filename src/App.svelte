@@ -1,4 +1,15 @@
 <script>
+
+  const num=10;
+
+  const names=["shyam",'ram','krishna'];
+
+  const fullNames=[
+    {firstName:"Bruce", lastName:"Wane"},
+    {firstName:"clark", lastName:"kent"},
+    {firstName:"Princess", lastName:"Diana"}
+  ]
+
   const name = "Batman";
   const gender = "<b>Male</b>";
   const hack = `<a href="#" onclick="alert('You have been hacked!')">Win a Price</a?`;
@@ -9,6 +20,26 @@
 </script>
 
 <main>
+
+  {#each fullNames as name, index}
+    <h3>{index+1} { name.firstName} {name.lastName}</h3>
+  {/each}
+
+  {#each names as name, index}
+    <h3>{name} {index +1 }</h3>
+  {/each}
+
+  {#if num===0}
+  <h2>The Number is Zero</h2>
+  {:else if num<0}
+  <h2>The number is Negative</h2>
+   {:else if num>0}
+  <h2>The number is Positive</h2>
+  {:else}
+  <h2>Not a numbe</h2>
+  {/if}
+
+
   <h2 class="undeline">Underline Text</h2>
   <h2 class={status}>Status</h2>
   <h2 class={promoted ? "promoted" : ""}>Movie Title</h2>
