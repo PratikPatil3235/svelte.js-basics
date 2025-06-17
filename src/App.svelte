@@ -11,13 +11,12 @@
     My App
   </h1>
 
-  <!-- Row container for Counter + ReactiveDeclaration -->
+
   <div class="row">
     <Counter />
     <ReactiveDeclaration />
   </div>
 
-  <!-- FormHandler below the row -->
   <div class="form-container">
     <FormHandler />
   </div>
